@@ -1,0 +1,381 @@
+---
+import volcanoLeft from "../../public/svgs/volcano-left.svg";
+import volcanoCenter from "../../public/svgs/volcano-center.svg";
+import volcanoRight from "../../public/svgs/volcano-right.svg";
+import volcanoCloud from "../../public/svgs/volcano-cloud.svg";
+import volcanoLava from "../../public/svgs/volcano-lava.svg";
+import island from "../../public/svgs/island.svg";
+import tree from "../../public/svgs/palm-tree.svg";
+import Counter from "../components/CountdownHero";
+---
+
+<section
+  class="relative hero bg-gradient-to-b from-[#03161f] via-headerBotBlue to-headerBotBlue"
+>
+  <div class="absolute top-0 w-full h-full background-layer overflow-hidden">
+    <div class="stars absolute top-0 left-0" />
+    <img class="dipper size-[175px] absolute left-52" src="/heroPageNew/star-constellation.svg" />
+    <div class="pl-14 moon-clouds absolute left-1/3 tablet:left-[50%] w-3/5 max-w-sm top-10">
+      <!-- <img class="moon-clouds absolute left-1/3 tablet:left-[50%] w-3/5 max-w-sm top-14" src="/heroPageNew/MoonAndClouds.svg" /> -->
+      <img class="moon" src="/heroPageNew/moon-and-clouds/Moon.svg" />
+      <img class="cloud1" src="/heroPageNew/moon-and-clouds/Cloud-1.svg" />
+      <img class="cloud" src="/heroPageNew/moon-and-clouds/Cloud.svg" />
+    </div>
+  <img class="dolphin z-40 absolute left-[45%] bottom-6 w-[60px] drop-shadow-xl" src="/medicons/ambulance-nobg.svg" />
+    <div class="island-group right-[-500px] min-w-[500px]">
+      <img class="ground island" src="/heroPageNew/Island.svg" />
+      <img class="tree1" src="/heroPageNew/Tree.svg" />
+      <img class="tree2" src="/heroPageNew/Tree.svg" />
+    </div>
+  </div>
+
+  <div
+    class="relative flex h-[80vh] min-h-[640px] items-center z-[60] desktop:w-1/2 desktop:justify-center whitespace-nowrap"
+  >
+    <!-- BRHacks Logo + CTA -->
+    <div
+      class="flex flex-col items-center tablet:items-start content-center space-y-2 tablet:pl-10 w-full tablet:w-3/5 desktop:w-auto"
+    >
+      <img
+  class="w-7/12 max-w-fit tablet:max-w-[18rem] pt-20 tablet:pl-5 rounded-full mt-[5px]"
+  src="/newlogo.png"
+  alt="logo"
+      />
+      <h1
+        class="title text-4xl tablet:text-6xl desktop:text-7xl font-bold p-0 tablet:pl-8 text-[#ffffff] z-30"
+      >
+        BRHacks 2025
+      </h1>
+      <h1 class="date text-2xl tablet:text-5xl desktop:text-6xl text-[#F6B09C] font-bold px-0 tablet:pl-8 z-30">
+        FEB 07-08
+      </h1>
+      <div
+        class="flex justify-around px-0 w-full tablet:w-auto gap-4 tablet:pl-8 z-40"
+      >
+        <a
+          class="cursor-pointer text-center bg-white fill-up-animation hover:text-white w-40 p-3 rounded-xl border-white border-solid border-4 text-black text-lg relative hover:scale-105 ease-in"
+          href="https://dashboard.brhacks.org"
+          target="_blank">Apply Now</a
+        >
+        <!-- <a class="cursor-default text-center bg-opacity-0 w-40 p-3 rounded-xl border-solid border-4 border-[#c9a5cf] text-white text-lg"  href="#" id="apply">Apply Now</a> -->
+        <a
+          class="cursor-pointer text-center fill-up-animation backdrop-blur tablet:bg-opacity-0 w-40 p-3 rounded-xl border-white border-solid border-4 text-white text-lg relative hover:scale-105 ease-in"
+          href="#about">Learn More</a
+        >
+      </div>
+      <!-- <div class="flex text-center justify-center text-2xl w-full tablet:w-auto tablet:pl-8 z-40 text-white">Registration opens in...</div>
+      <div class="flex justify-around px-0 w-full tablet:w-auto gap-4 tablet:pl-8 z-40" id="countdown">
+        <Counter client:load/>
+      </div> -->
+    </div>
+
+    <!-- <div class="overflow-y-hidden absolute bottom-0 right-[10.3%] w-1/3 z-10">
+      <img class=" " src="/heroPage/moon.svg" alt="moon">
+    </div> -->
+  </div>
+</section>
+
+<!-- water -->
+<div class="flex bg-[#01476d]">
+  <div class="hero flex w-full h-[25vh] min-h-[200px] flex-row z-30
+  bg-cover bg-bottom bg-no-repeat" style="background-image:url('/heroPageNew/water-night.svg')" >
+    <img class="w-full h-full object-cover " src="/heroPage/subtract.svg">
+  </div>
+
+  <img class="w-full h-full absolute z-20
+  transform -translate-y-120 max-h-[50vh]" src="/heroPage/rays.png">
+</div>
+
+<style>
+  .fill-up-animation::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    border-radius: 8px;
+    z-index: -1;
+  }
+
+  .fill-up-animation:hover::before {
+    background-color: #2C5A79;
+    animation: loadingWave 2s linear;
+  }
+
+  @keyframes loadingWave {
+    0% {
+      clip-path: polygon(
+        0% 100%,
+        100% 100%,
+        99% 100%,
+        81% 100%,
+        64% 100%,
+        46% 100%,
+        29% 100%,
+        14% 100%,
+        0 100%
+      );
+    }
+
+    10% {
+      clip-path: polygon(
+        0% 100%,
+        100% 100%,
+        100% 90%,
+        84% 94%,
+        66% 95%,
+        47% 94%,
+        31% 95%,
+        14% 96%,
+        0 94%
+      );
+    }
+
+    20% {
+      clip-path: polygon(
+        0% 100%,
+        100% 100%,
+        100% 74%,
+        81% 72%,
+        63% 72%,
+        44% 75%,
+        33% 77%,
+        16% 78%,
+        0 74%
+      );
+    }
+
+    40% {
+      clip-path: polygon(
+        0% 100%,
+        100% 100%,
+        100% 53%,
+        85% 55%,
+        67% 58%,
+        44% 54%,
+        30% 48%,
+        15% 47%,
+        0 49%
+      );
+    }
+
+    60% {
+      clip-path: polygon(
+        0% 100%,
+        100% 100%,
+        100% 24%,
+        86% 25%,
+        69% 29%,
+        53% 34%,
+        37% 38%,
+        18% 40%,
+        0 38%
+      );
+    }
+
+    80% {
+      clip-path: polygon(
+        0% 100%,
+        100% 100%,
+        100% 22%,
+        84% 29%,
+        67% 31%,
+        45% 27%,
+        26% 17%,
+        12% 14%,
+        0 15%
+      );
+    }
+
+    90% {
+      clip-path: polygon(
+        0% 100%,
+        100% 100%,
+        100% 5%,
+        86% 10%,
+        73% 10%,
+        55% 6%,
+        33% 3%,
+        15% 5%,
+        0 9%
+      );
+    }
+
+    100% {
+      clip-path: polygon(
+        0% 100%,
+        100% 100%,
+        100% 0,
+        86% 0,
+        71% 0,
+        55% 0,
+        34% 0,
+        18% 0,
+        0 0
+      );
+    }
+  }
+
+  .island-group {
+    position: absolute;
+    right: 0;
+    bottom: -1px;
+    width: 50%;
+    min-width: 600px;
+  }
+
+  .tree1 {
+    position: absolute;
+    /* right: 90px; */
+    width: 25%; /* percent of island*/
+    z-index: 30;
+    bottom: 0;
+    transform: translateX(100%);
+  }
+
+  .tree2 {
+    position: absolute;
+    right: calc(20% + 2vw);
+    width: 15.5%;
+    bottom: 20px;
+    transform: scaleX(-1);
+    transform-origin: center;
+    width: 15.5%;
+    z-index: 30;
+  }
+
+  @media (max-width: 640px) {
+    .island-group {
+      right: -300px;
+      height: 10px;
+    }
+
+   }
+
+  /* @media (min-width: 1133px) {
+    .dolphin {
+      left: clamp(680px, 50%, 50%);
+    }
+  } */
+
+  .island {
+    z-index: 31;
+    width: 100%;
+  }
+
+  .hero-text {
+    z-index: 999;
+  }
+
+  .ground {
+    position: absolute;
+    bottom: 0;
+  }
+
+  .hero {
+    /* background: linear-gradient(160deg, #0880ca 24.6%, #7dfff4 92.52%); */
+    background-image: linear-gradient(180deg, #002242 0%, #0e477c 47%, #855186 70%, #e06e8d 86%, #ff8d7e 100%)
+  }
+
+  @keyframes jump {
+    0%,
+    100% {
+      transform: translateY(0) rotate(0deg);
+    }
+    50% {
+      transform: translateY(-20px) rotate(-5deg);
+    }
+  }
+
+  .dolphin {
+    animation: jump 5s ease-in-out infinite;
+    transform-origin: center bottom;
+  }
+
+  @keyframes cloud-float {
+    0%, 100% {
+      transform: translateX(0) translateY(0);
+    }
+    50% {
+      transform: translateX(15px) translateY(-5px);
+    }
+  }
+  @keyframes cloud-float1 {
+    0%, 100% {
+      transform: translateX(0) translateY(0);
+    }
+    50% {
+      transform: translateX(-15px) translateY(-5px);
+    }
+  }
+
+  @keyframes moon-float {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-8px);
+    }
+  }
+
+  .cloud {
+    scale: .8;
+    position: absolute;
+    left: -110px;
+    top: 55px;
+    animation: cloud-float 5s ease-in-out infinite;
+  }
+  .cloud1 {
+    scale: .8;
+    position: absolute;
+    left: 145px;
+    top: 100px;
+    animation: cloud-float1 5s ease-in-out infinite;
+  }
+  .moon {
+    scale: .9;
+    position: absolute;
+    animation: moon-float 5s ease-in-out infinite, glow 5s ease-in-out infinite;
+  }
+  .stars {
+    background-repeat: repeat-x;
+    background-image: url("/heroPageNew/stars-pattern.svg");
+    width:100%;
+    height: 100%;
+    mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1), rgba(0, 0, 0, 1) 30%, rgba(0, 0, 0, 0) 80%);
+  }
+
+  @keyframes pulse {
+    0% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.1);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+
+  .pulse-animation {
+    animation: pulse 2s ease-in-out infinite;
+  }
+</style>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const apply = document.querySelector("#apply");
+    const countdown = document.querySelector("#countdown");
+
+    if (apply != null && countdown != null) {
+      apply.addEventListener("mouseover", () => {
+        countdown.classList.add("pulse-animation");
+      });
+
+      apply.addEventListener("mouseout", () => {
+        countdown.classList.remove("pulse-animation");
+      });
+    }
+  });
+</script>

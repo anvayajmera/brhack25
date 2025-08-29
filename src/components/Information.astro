@@ -1,0 +1,63 @@
+---
+import stethoscope from '../../public/medicons/stethoscope-nobg.svg'
+import heart from '../../public/medicons/heart-nobg.svg'
+import pill from '../../public/medicons/pill-nobg.svg'
+import medkit from '../../public/medicons/medkit.svg'
+import syringe from '../../public/medicons/syringe.svg'
+import bandage from '../../public/medicons/bandage.svg'
+import Counter from '../components/Countdown'
+import { motion } from "framer-motion";
+---
+
+<section
+  class="relative bg-[#024368] pb-28 text-white"
+  id="information"
+>
+  <div
+    class="relative z-50 flex justify-center w-full flex-wrap gap-x-20 gap-y-28 px-4 tablet:px-[10%] desktop:px-[2%]"
+    id="counter-faq"
+  >
+    <div class="flex-auto px-[2%]" id="countdown">
+      <div class="flex items-center justify-center">
+        <h1 class="font-poppin text-center text-5xl font-bold">
+        </h1>
+      </div>
+      <Counter client:load />
+    </div>
+
+  </div>
+</section>
+
+<style>
+  #chest {
+    background: url('../chest.svg');
+    width: 75px;
+    height: 75px;
+    background-repeat: no-repeat;
+    background-size: 75px;
+  }
+
+  .break-group {
+    width: 100%;
+    min-width: 300px;
+    top: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  .whale-group {
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+    width: 60%;
+  }
+
+  .whale {
+    left: -4%;
+  }
+
+  .right-rock {
+    width: 25%;
+    right: 5%;
+  }
+</style>

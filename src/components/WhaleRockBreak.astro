@@ -1,0 +1,46 @@
+---
+import stethoscope from '../../public/medicons/stethoscope-nobg.svg'
+import heart from '../../public/medicons/heart-nobg.svg'
+import pill from '../../public/medicons/pill-nobg.svg'
+---
+
+<div class="break-group">
+  <div class="whale-group">
+    <img class="whale" src={stethoscope.src} />
+    <img class="whale-robot" src={heart.src} />
+  </div>
+  <img class="right-rock" src={pill.src} />
+</div>
+
+<style>
+  .break-group {
+    position: relative;
+    width: 100%;
+    top: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  .whale-group {
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+    width: 60%;
+  }
+
+  .whale {
+    position: relative;
+    width: 40%;
+    left: -4%;
+  }
+
+  .whale-robot {
+    position: relative;
+    width: 10%;
+  }
+
+  .right-rock {
+    width: 25%;
+    right: 5%;
+  }
+</style>
