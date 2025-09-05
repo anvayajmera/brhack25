@@ -121,13 +121,6 @@ const schedulingData = [
   #decor5 { top: 50%; left: 14%; font-size: 36px; transform: translate(-50%,-50%) rotate(18deg); }
   #decor6 { top: 64%; left: 6%; font-size: 42px; transform: translate(-50%,-50%) rotate(4deg); }
   #decor7 { top: 78%; left: 16%; font-size: 30px; transform: translate(-50%,-50%) rotate(-12deg); }
-  #decor8 { top: 8%; left: 6%; font-size: 26px; transform: translate(-50%,-50%) rotate(8deg); }
-  #decor9 { top: 72%; left: 8%; font-size: 40px; transform: translate(-50%,-50%) rotate(-16deg); }
-  #decor10 { top: 86%; left: 10%; font-size: 36px; transform: translate(-50%,-50%) rotate(10deg); }
-  #decor21 { top: 52%; left: 9%; font-size: 34px; transform: translate(-50%,-50%) rotate(24deg); }
-  #decor22 { top: 30%; left: 6%; font-size: 30px; transform: translate(-50%,-50%) rotate(-14deg); }
-  #decor25 { top: 90%; left: 16%; font-size: 34px; transform: translate(-50%,-50%) rotate(8deg); }
-
   /* right side (condensed & smaller) */
   #decor11 { top: 8%; right: 12%; font-size: 60px; transform: translate(-50%,-50%) rotate(12deg); }
   #decor12 { top: 20%; right: 6%; font-size: 45px; transform: translate(-50%,-50%) rotate(-16deg); }
@@ -142,4 +135,59 @@ const schedulingData = [
   #decor23 { top: 28%; right: 16%; font-size: 34px; transform: translate(-50%,-50%) rotate(-20deg); }
   #decor24 { top: 92%; right: 6%; font-size: 30px; transform: translate(-50%,-50%) rotate(12deg); }
   #decor26 { top: 82%; right: 16%; font-size: 30px; transform: translate(-50%,-50%) rotate(-8deg); }
+    /* Remove rigid per-id placement; run client script to disperse icons randomly */
+    .decor-icon { will-change: transform, top, left, right, opacity; }
+
+    /* On narrow screens keep decorations small */
+    @media (max-width: 768px) {
+      .decor-icon { opacity: 0.06; }
+    }
+  </style>
+
+  <script type="module">
+    // Randomly disperse decoration icons into left/right gutters,
+    // keeping them away from the central content area.
+    function rand(min, max) { return Math.random() * (max - min) + min; }
+
+    function placeIcons() {
+      const icons = Array.from(document.querySelectorAll('.background-decorations .decor-icon'));
+      if (!icons.length) return;
+      icons.forEach((el, i) => {
+        // choose side deterministically from index to keep spread
+        const side = (i % 2 === 0) ? 'left' : 'right';
+
+        // vertical range: avoid top 6% and bottom 6% to prevent overflow
+        const top = rand(8, 88);
+
+        // horizontal gutter ranges (percent)
+        const leftRange = [2, 18];
+        const rightRange = [2, 18];
+
+        // random size and rotation
+        const size = Math.floor(rand(22, 60));
+        const rot = Math.floor(rand(-30, 30));
+
+        el.style.position = 'absolute';
+        el.style.top = top + '%';
+        el.style.fontSize = size + 'px';
+        el.style.transform = `translate(-50%,-50%) rotate(${rot}deg)`;
+        el.style.opacity = (Math.random() * 0.06 + 0.04).toString();
+
+        if (side === 'left') {
+          const left = rand(leftRange[0], leftRange[1]);
+          el.style.left = left + '%';
+          el.style.right = 'auto';
+        } else {
+          const right = rand(rightRange[0], rightRange[1]);
+          el.style.right = right + '%';
+          el.style.left = 'auto';
+        }
+      });
+    }
+
+    // Place on load and when resizing (debounced)
+    window.addEventListener('load', placeIcons);
+    let t;
+    window.addEventListener('resize', () => { clearTimeout(t); t = setTimeout(placeIcons, 200); });
+  </script>
 </style>
