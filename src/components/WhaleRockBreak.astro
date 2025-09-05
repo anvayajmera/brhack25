@@ -1,15 +1,11 @@
 ---
-import stethoscope from '../../public/medicons/stethoscope-nobg.svg'
-import heart from '../../public/medicons/heart-nobg.svg'
-import pill from '../../public/medicons/pill-nobg.svg'
----
-
-<div class="break-group">
+<div class="break-group sea-med">
   <div class="whale-group">
-    <img class="whale" src={stethoscope.src} />
-    <img class="whale-robot" src={heart.src} />
+    <img class="whale" src="/medicons/stethoscope-nobg.svg" alt="stethoscope" />
+    <img class="whale-robot" src="/medicons/heart-nobg.svg" alt="heart" />
   </div>
-  <img class="right-rock" src={pill.src} />
+  <img class="right-rock" src="/medicons/pill-nobg.svg" alt="pill" />
+</div>
 </div>
 
 <style>
@@ -42,5 +38,10 @@ import pill from '../../public/medicons/pill-nobg.svg'
   .right-rock {
     width: 25%;
     right: 5%;
+  }
+
+  /* sea-med polish */
+  .sea-med img {
+    filter: drop-shadow(0 6px 12px rgba(2,20,40,0.6)) saturate(1.1);
   }
 </style>

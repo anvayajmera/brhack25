@@ -1,123 +1,71 @@
 ---
+// Single-day workshops schedule (2nd Sunday of October 2025 -> Oct 12, 2025)
 const schedulingData = [
   {
-    date: "Day 1: February 7th",
-    day: "Friday",
+    date: "Sunday, October 12, 2025",
+    day: "Sunday",
+    // condensed event list to keep the visual section short
     events: [
-      {
-        time: "5:00 pm - 6:30 pm",
-        title: "Check-In & Snacks",
-        location: "ARC First Floor (Lounge Area)",
-      },
-      {
-        time: "5:00 pm - 6:30 pm",
-        title: "Team Building",
-        location: "ARC 137",
-      },
-      {
-        time: "5:00 pm - 7:30 pm",
-        title: "Network w/ BRHacks Sponsors",
-        location: "ARC First Floor (Lounge Area)",
-      },
-      {
-        time: "6:00 pm - 6:30 pm",
-        title: "Opening Ceremony",
-        location: "ARC 137 & ARC 241",
-      },
-      {
-        time: "6:30 pm - 7:15 pm",
-        title:
-          "Creating your own AI agent using Python and OpenAI by John Deere",
-        location: "ARC 241",
-      },
-      {
-        time: "7:30 pm - 8:15 pm",
-        title: "React Query: Fetch Smarter, Not Harder by Fulcrum GT",
-        location: "ARC 241",
-      },
-      {
-        time: "8:15 pm - 9:00 pm",
-        title: "Dinner",
-        location: "ARC First Floor (Lounge Area)",
-      },
-      {
-        time: "8:30 pm - 9:30 pm",
-        title: "Hydro Dash: Mario Kart with BRHacks!",
-        location: "ARC 241",
-      },
-    ],
-  },
-  {
-    date: "Day 2: February 8th",
-    day: "Saturday",
-    events: [
-      {
-        time: "9:00 am - 10:30 am",
-        title: "Check-In & Breakfast",
-        location: "ARC First Floor (Lounge Area)",
-      },
-      {
-        time: "11:00 am - 12:00 pm",
-        title: "De-stress With Grainger: Gimkit Trivia!",
-        location: "ARC 241",
-      },
-      {
-        time: "By 2:00 pm",
-        title: "DevPost Drafts + Group Form Due",
-        location: "Dev Post & Form",
-      },
-      {
-        time: "2:00 pm - 3:00 pm",
-        title: "Lunch",
-        location: "ARC First Floor (Lounge Area)",
-      },
-      {
-        time: "6:30 pm",
-        title: "Hacking Over!",
-        location: "Devpost",
-      },
-      {
-        time: "6:35 pm - 7:00 pm",
-        title: "Raffle With Fulcrum!",
-        location: "ARC 137",
-      },
-      {
-        time: "7:00 pm - 7:50 pm",
-        title: "Project Expo",
-        location: "ARC 241 & ARC 242",
-      },
-      {
-        time: "8:00 pm - 9:15 pm",
-        title: "Closing Ceremony",
-        location: "ARC 137",
-      },
-      {
-        time: "9:15 pm",
-        title: "Dinner & Meet the Team!",
-        location: "ARC First Floor (Lounge Area)",
-      },
+      { time: "8:00 - 9:45", title: "Registration / Team creation", location: "Main Lobby" },
+      { time: "9:45 - 10:00", title: "Opening Remarks", location: "Auditorium" },
+      { time: "10:00 - 11:45", title: "Workshop Blocks (see room listings)", location: "Multiple Rooms" },
+      { time: "12:00 - 12:45", title: "Lunch", location: "Cafeteria" },
+      { time: "1:00 - 2:30", title: "Speaker Sessions / Mentorship", location: "Auditorium / Cafeteria" },
+      { time: "2:30 - 5:30", title: "Hack / Build Time", location: "Classrooms & Labs" },
+      { time: "5:30 - 6:00", title: "Project Demos & Judging", location: "Auditorium" },
+      { time: "6:00 - 7:00", title: "Closing Ceremonies", location: "Auditorium" },
     ],
   },
 ];
 ---
 
 <section
-  class="flex flex-col items-center w-full bg-gradient-to-b from-[#052947] to-[#091f3d] text-white pt-28 "
+  class="flex flex-col items-center w-full bg-gradient-to-b from-[#052947] to-[#091f3d] text-white pt-16 "
   id="schedule"
 >
+  <!-- background decorations (medical-theme) -->
+  <div class="background-decorations" aria-hidden="true">
+    <!-- Each SVG uses currentColor so CSS controls opacity/color -->
+    <svg class="decor-icon" id="decor1" viewBox="0 0 24 24" width="1em" height="1em" fill="currentColor"><circle cx="12" cy="12" r="10"/><path d="M11 7h2v4h4v2h-4v4h-2v-4H7v-2h4z" fill="currentColor"/></svg>
+    <svg class="decor-icon" id="decor2" viewBox="0 0 24 24" width="1em" height="1em" fill="currentColor"><circle cx="12" cy="12" r="10"/><path d="M11 7h2v4h4v2h-4v4h-2v-4H7v-2h4z" fill="currentColor"/></svg>
+    <svg class="decor-icon" id="decor3" viewBox="0 0 24 24" width="1em" height="1em" fill="currentColor"><circle cx="12" cy="12" r="10"/><path d="M11 7h2v4h4v2h-4v4h-2v-4H7v-2h4z" fill="currentColor"/></svg>
+    <svg class="decor-icon" id="decor4" viewBox="0 0 24 24" width="1em" height="1em" fill="currentColor"><circle cx="12" cy="12" r="10"/><path d="M11 7h2v4h4v2h-4v4h-2v-4H7v-2h4z" fill="currentColor"/></svg>
+    <svg class="decor-icon" id="decor5" viewBox="0 0 24 24" width="1em" height="1em" fill="currentColor"><circle cx="12" cy="12" r="10"/><path d="M11 7h2v4h4v2h-4v4h-2v-4H7v-2h4z" fill="currentColor"/></svg>
+    <svg class="decor-icon" id="decor6" viewBox="0 0 24 24" width="1em" height="1em" fill="currentColor"><circle cx="12" cy="12" r="10"/><path d="M11 7h2v4h4v2h-4v4h-2v-4H7v-2h4z" fill="currentColor"/></svg>
+    <svg class="decor-icon" id="decor7" viewBox="0 0 24 24" width="1em" height="1em" fill="currentColor"><circle cx="12" cy="12" r="10"/><path d="M11 7h2v4h4v2h-4v4h-2v-4H7v-2h4z" fill="currentColor"/></svg>
+    <svg class="decor-icon" id="decor8" viewBox="0 0 24 24" width="1em" height="1em" fill="currentColor"><circle cx="12" cy="12" r="10"/><path d="M11 7h2v4h4v2h-4v4h-2v-4H7v-2h4z" fill="currentColor"/></svg>
+    <svg class="decor-icon" id="decor9" viewBox="0 0 24 24" width="1em" height="1em" fill="currentColor"><circle cx="12" cy="12" r="10"/><path d="M11 7h2v4h4v2h-4v4h-2v-4H7v-2h4z" fill="currentColor"/></svg>
+    <svg class="decor-icon" id="decor10" viewBox="0 0 24 24" width="1em" height="1em" fill="currentColor"><circle cx="12" cy="12" r="10"/><path d="M11 7h2v4h4v2h-4v4h-2v-4H7v-2h4z" fill="currentColor"/></svg>
+    <svg class="decor-icon" id="decor11" viewBox="0 0 24 24" width="1em" height="1em" fill="currentColor"><circle cx="12" cy="12" r="10"/><path d="M11 7h2v4h4v2h-4v4h-2v-4H7v-2h4z" fill="currentColor"/></svg>
+    <svg class="decor-icon" id="decor12" viewBox="0 0 24 24" width="1em" height="1em" fill="currentColor"><circle cx="12" cy="12" r="10"/><path d="M11 7h2v4h4v2h-4v4h-2v-4H7v-2h4z" fill="currentColor"/></svg>
+    <svg class="decor-icon" id="decor13" viewBox="0 0 24 24" width="1em" height="1em" fill="currentColor"><circle cx="12" cy="12" r="10"/><path d="M11 7h2v4h4v2h-4v4h-2v-4H7v-2h4z" fill="currentColor"/></svg>
+    <svg class="decor-icon" id="decor14" viewBox="0 0 24 24" width="1em" height="1em" fill="currentColor"><circle cx="12" cy="12" r="10"/><path d="M11 7h2v4h4v2h-4v4h-2v-4H7v-2h4z" fill="currentColor"/></svg>
+    <svg class="decor-icon" id="decor15" viewBox="0 0 24 24" width="1em" height="1em" fill="currentColor"><circle cx="12" cy="12" r="10"/><path d="M11 7h2v4h4v2h-4v4h-2v-4H7v-2h4z" fill="currentColor"/></svg>
+    <svg class="decor-icon" id="decor16" viewBox="0 0 24 24" width="1em" height="1em" fill="currentColor"><circle cx="12" cy="12" r="10"/><path d="M11 7h2v4h4v2h-4v4h-2v-4H7v-2h4z" fill="currentColor"/></svg>
+    <svg class="decor-icon" id="decor17" viewBox="0 0 24 24" width="1em" height="1em" fill="currentColor"><circle cx="12" cy="12" r="10"/><path d="M11 7h2v4h4v2h-4v4h-2v-4H7v-2h4z" fill="currentColor"/></svg>
+    <svg class="decor-icon" id="decor18" viewBox="0 0 24 24" width="1em" height="1em" fill="currentColor"><circle cx="12" cy="12" r="10"/><path d="M11 7h2v4h4v2h-4v4h-2v-4H7v-2h4z" fill="currentColor"/></svg>
+    <svg class="decor-icon" id="decor19" viewBox="0 0 24 24" width="1em" height="1em" fill="currentColor"><circle cx="12" cy="12" r="10"/><path d="M11 7h2v4h4v2h-4v4h-2v-4H7v-2h4z" fill="currentColor"/></svg>
+    <svg class="decor-icon" id="decor20" viewBox="0 0 24 24" width="1em" height="1em" fill="currentColor"><circle cx="12" cy="12" r="10"/><path d="M11 7h2v4h4v2h-4v4h-2v-4H7v-2h4z" fill="currentColor"/></svg>
+    <svg class="decor-icon" id="decor21" viewBox="0 0 24 24" width="1em" height="1em" fill="currentColor"><circle cx="12" cy="12" r="10"/><path d="M11 7h2v4h4v2h-4v4h-2v-4H7v-2h4z" fill="currentColor"/></svg>
+    <svg class="decor-icon" id="decor22" viewBox="0 0 24 24" width="1em" height="1em" fill="currentColor"><circle cx="12" cy="12" r="10"/><path d="M11 7h2v4h4v2h-4v4h-2v-4H7v-2h4z" fill="currentColor"/></svg>
+    <svg class="decor-icon" id="decor23" viewBox="0 0 24 24" width="1em" height="1em" fill="currentColor"><circle cx="12" cy="12" r="10"/><path d="M11 7h2v4h4v2h-4v4h-2v-4H7v-2h4z" fill="currentColor"/></svg>
+    <svg class="decor-icon" id="decor24" viewBox="0 0 24 24" width="1em" height="1em" fill="currentColor"><circle cx="12" cy="12" r="10"/><path d="M11 7h2v4h4v2h-4v4h-2v-4H7v-2h4z" fill="currentColor"/></svg>
+    <svg class="decor-icon" id="decor25" viewBox="0 0 24 24" width="1em" height="1em" fill="currentColor"><circle cx="12" cy="12" r="10"/><path d="M11 7h2v4h4v2h-4v4h-2v-4H7v-2h4z" fill="currentColor"/></svg>
+    <svg class="decor-icon" id="decor26" viewBox="0 0 24 24" width="1em" height="1em" fill="currentColor"><circle cx="12" cy="12" r="10"/><path d="M11 7h2v4h4v2h-4v4h-2v-4H7v-2h4z" fill="currentColor"/></svg>
+  </div>
   <div class="flex place-content-center items-center px-4 tablet:px-[10%]">
-    <h1 class="text-5xl font-bold text-center">📅 Schedule</h1>
+    <h1 class="text-4xl font-bold text-center">📅 Schedule</h1>
   </div>
 
   <div
-    class="flex flex-col desktop:flex-row justify-center my-10 gap-28 px-4 tablet:px-[15%] desktop:px-[2%]"
+    class="flex flex-col desktop:flex-row justify-center my-6 gap-12 px-4 tablet:px-[15%] desktop:px-[2%]"
   >
     {
       schedulingData.map((day) => (
-        <div class= "max-w-full flex flex-1 py-12 px-10 tablet:px-24 pb-20 bg-cover bg-[url('../schedback.svg')]">
+        <div class= "max-w-full flex flex-1 py-6 px-6 tablet:px-12 pb-8 bg-cover bg-[url('../schedback.svg')]">
           <div class=" font-poppin flex-col flex text-white border-none ">
-            <h1 class="text-3xl font-[700] pt-10 text-center">{day.date}</h1>
-            <h1 class="font-poppin mb-5 text-2xl font-[500] text-center">
+            <h1 class="text-2xl font-[700] pt-6 text-center">{day.date}</h1>
+            <h1 class="font-poppin mb-3 text-xl font-[500] text-center">
               {day.day}
             </h1>
 
@@ -126,13 +74,12 @@ const schedulingData = [
               <h1 class="text-9xl text-center ">🚧</h1>
               <h1 class="text-5xl text-center pt-5">TBD</h1>
             </div> */}
-            <div class="flex flex-col gap-5">
+            <div class="flex flex-col gap-3">
               {day.events.map((event) => (
-                <p class="text-lg">
-                  <span class="font-extrabold text-xl">{event.title}</span>
+                <p class="text-base">
+                  <span class="font-extrabold text-lg">{event.title}</span>
                   <br>
-                  <span>{event.time}</span> - <span class="text-[#53B8F4]">{event.location}</span>
-
+                  <span class="text-sm">{event.time}</span> - <span class="text-[#53B8F4]">{event.location}</span>
 
                 </p>
               ))}
@@ -156,4 +103,43 @@ const schedulingData = [
    background-size: 75px;
    margin: 35px;
   }
+
+  /* Background decorations for schedule (medical/sea theme) */
+  /* ensure schedule is a positioned stacking context so decorations sit behind content but above background */
+  #schedule{ position: relative; }
+  .background-decorations{ position:absolute; inset:0; z-index:0; pointer-events:none; }
+  .decor-icon{ position:absolute; color: rgba(255,255,255,0.07); transition: all .25s ease; transform-origin: center center; }
+
+  /* make sure content sits above decorations */
+  #schedule > * { position: relative; z-index: 1; }
+
+  /* left side (condensed & smaller) */
+  #decor1 { top: 6%; left: 12%; font-size: 40px; transform: translate(-50%,-50%) rotate(-20deg); }
+  #decor2 { top: 14%; left: 6%; font-size: 32px; transform: translate(-50%,-50%) rotate(12deg); }
+  #decor3 { top: 24%; left: 10%; font-size: 52px; transform: translate(-50%,-50%) rotate(8deg); }
+  #decor4 { top: 36%; left: 6%; font-size: 45px; transform: translate(-50%,-50%) rotate(-8deg); }
+  #decor5 { top: 50%; left: 14%; font-size: 36px; transform: translate(-50%,-50%) rotate(18deg); }
+  #decor6 { top: 64%; left: 6%; font-size: 42px; transform: translate(-50%,-50%) rotate(4deg); }
+  #decor7 { top: 78%; left: 16%; font-size: 30px; transform: translate(-50%,-50%) rotate(-12deg); }
+  #decor8 { top: 8%; left: 6%; font-size: 26px; transform: translate(-50%,-50%) rotate(8deg); }
+  #decor9 { top: 72%; left: 8%; font-size: 40px; transform: translate(-50%,-50%) rotate(-16deg); }
+  #decor10 { top: 86%; left: 10%; font-size: 36px; transform: translate(-50%,-50%) rotate(10deg); }
+  #decor21 { top: 52%; left: 9%; font-size: 34px; transform: translate(-50%,-50%) rotate(24deg); }
+  #decor22 { top: 30%; left: 6%; font-size: 30px; transform: translate(-50%,-50%) rotate(-14deg); }
+  #decor25 { top: 90%; left: 16%; font-size: 34px; transform: translate(-50%,-50%) rotate(8deg); }
+
+  /* right side (condensed & smaller) */
+  #decor11 { top: 8%; right: 12%; font-size: 60px; transform: translate(-50%,-50%) rotate(12deg); }
+  #decor12 { top: 20%; right: 6%; font-size: 45px; transform: translate(-50%,-50%) rotate(-16deg); }
+  #decor13 { top: 32%; right: 13%; font-size: 40px; transform: translate(-50%,-50%) rotate(8deg); }
+  #decor14 { top: 46%; right: 6%; font-size: 52px; transform: translate(-50%,-50%) rotate(4deg); }
+  #decor15 { top: 62%; right: 6%; font-size: 42px; transform: translate(-50%,-50%) rotate(-12deg); }
+  #decor16 { top: 76%; right: 14%; font-size: 36px; transform: translate(-50%,-50%) rotate(20deg); }
+  #decor17 { top: 86%; right: 8%; font-size: 45px; transform: translate(-50%,-50%) rotate(-8deg); }
+  #decor18 { top: 6%; right: 6%; font-size: 40px; transform: translate(-50%,-50%) rotate(-4deg); }
+  #decor19 { top: 68%; right: 8%; font-size: 34px; transform: translate(-50%,-50%) rotate(14deg); }
+  #decor20 { top: 54%; right: 16%; font-size: 26px; transform: translate(-50%,-50%) rotate(18deg); }
+  #decor23 { top: 28%; right: 16%; font-size: 34px; transform: translate(-50%,-50%) rotate(-20deg); }
+  #decor24 { top: 92%; right: 6%; font-size: 30px; transform: translate(-50%,-50%) rotate(12deg); }
+  #decor26 { top: 82%; right: 16%; font-size: 30px; transform: translate(-50%,-50%) rotate(-8deg); }
 </style>

@@ -1,14 +1,14 @@
 import { motion  } from 'framer-motion';
 
 const animals = [
-  { image: "/medicons/stethoscope-nobg.svg" },
-  { image: "/medicons/heart-nobg.svg" },
-  { image: "/medicons/pill-nobg.svg" },
-  { image: "/medicons/medkit-nobg.svg" },
-  { image: "/medicons/syringe-nobg.svg" },
-  { image: "/medicons/bandage-nobg.svg" },
-  { image: "/medicons/ambulance-nobg.svg" },
-  { image: "/medicons/clipboard-nobg.svg" },
+  { image: "/medicons/stethoscope.svg" },
+  { image: "/medicons/heart.svg" },
+  { image: "/medicons/pill.svg" },
+  { image: "/medicons/medkit.svg" },
+  { image: "/medicons/syringe.svg" },
+  { image: "/medicons/bandage.svg" },
+  { image: "/medicons/ambulance.svg" },
+  { image: "/medicons/clipboard.svg" },
 
 ]
 

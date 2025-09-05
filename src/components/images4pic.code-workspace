@@ -1,0 +1,13 @@
+{
+	"folders": [
+		{
+			"name": "images4pic",
+			"path": "../../../../images4pic"
+		},
+		{
+			"name": "newbrhack",
+			"path": "../.."
+		}
+	],
+	"settings": {}
+}

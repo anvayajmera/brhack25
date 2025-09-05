@@ -9,20 +9,20 @@ import Sponsor from '../components/Sponsor';
     Sponsors
     <div class="flex animate-bob-sway-med" id="pink-jelly"></div></div>
   </h1>
-  <div class="h-fit w-auto flex flex-wrap justify-between mx-[15px] mb-[-80px]">
-  <img class="sponsor-creature animate-bob-med block w-[96px]" src="/medicons/stethoscope-nobg.svg" />
-  <img class="sponsor-creature animate-bob-sway-med block w-[96px]" src="/medicons/heart-nobg.svg" />
-  <img class="sponsor-creature block w-[96px]" src="/medicons/pill-nobg.svg"/>
-  <img class="sponsor-creature animate-bob-sway-med block w-[96px]" src="/medicons/medkit-nobg.svg"  />
+  <div class="h-fit w-auto flex flex-wrap justify-between mx-[15px] mb-[-80px] sea-sponsors">
+  <img class="sponsor-creature animate-bob-med block w-[96px] sea-med-img" src="/medicons/stethoscope.svg" alt="stethoscope" />
+  <img class="sponsor-creature animate-bob-sway-med block w-[96px] sea-med-img" src="/medicons/heart.svg" alt="heart" />
+  <img class="sponsor-creature block w-[96px] sea-med-img" src="/medicons/pill.svg" alt="pill"/>
+  <img class="sponsor-creature animate-bob-sway-med block w-[96px] sea-med-img" src="/medicons/medkit.svg" alt="medkit" />
   </div>
-  <div class="w-full h-[318px] absolute z-0">
-    <img src="/sponsors/banner.svg" class="size-full" />
+  <div class="w-full h-[318px] absolute z-0 sponsor-banner-bg">
+    <img src="/sponsors/banner.svg" class="size-full" alt="sponsor banner" />
   </div>
   <Sponsor client:load/>
-  <div class="h-fit w-auto flex flex-wrap justify-between mx-[80px] mt-[-20px]">
-  <img class="sponsor-creature animate-bob-sway-med block w-[96px]" src="/medicons/syringe-nobg.svg"  />
-  <img class="sponsor-creature block w-[96px]" src="/medicons/bandage-nobg.svg"  />
-  <img class="sponsor-creature animate-bob-sway-med block w-[96px]" src="/medicons/ambulance-nobg.svg"  />
+  <div class="h-fit w-auto flex flex-wrap justify-between mx-[80px] mt-[-20px] sea-sponsors">
+  <img class="sponsor-creature animate-bob-sway-med block w-[96px] sea-med-img" src="/medicons/syringe.svg" alt="syringe" />
+  <img class="sponsor-creature block w-[96px] sea-med-img" src="/medicons/bandage.svg" alt="bandage" />
+  <img class="sponsor-creature animate-bob-sway-med block w-[96px] sea-med-img" src="/medicons/ambulance.svg" alt="ambulance" />
   </div>  
 </section>
   
@@ -40,5 +40,11 @@ import Sponsor from '../components/Sponsor';
   position: relative;
   z-index: 1;
 }
+
+.sea-med-img{
+  filter: drop-shadow(0 12px 28px rgba(0,18,30,0.55)) saturate(1.05) brightness(1.02) contrast(1.02);
+}
+
+.sponsor-banner-bg img{opacity:0.12;object-fit:cover;width:100%;height:100%;}
 </style>
   

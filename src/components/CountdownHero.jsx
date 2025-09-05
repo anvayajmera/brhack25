@@ -31,7 +31,8 @@ function useTimer(deadline, interval = SECOND) {
 
 
 export default function Information() {
-  const { days, hours, minutes, seconds } = useTimer("2025-01-22T14:00:00.000Z");
+  // Event target: 2nd Sunday of October 2025 -> 2025-10-12; start time set to 09:30 UTC
+  const { days, hours, minutes, seconds } = useTimer("2025-10-12T09:30:00.000Z");
 
 
   return(

@@ -5,10 +5,10 @@
 <footer
   class= "bg-gradient-to-b from-[#14183f] to-[#181642] pt-20"
 >
-  <div class="w-full relative overflow-x-hidden flex justify-center">
-  <img src="/medicons/heart-nobg.svg" alt="heart" class="w-[120px] block"/>
-  <img src="/medicons/pill-nobg.svg" alt="pill" class="w-[44px] absolute block top-[20%] left-[25%] animate-bob-sway-med"/>
-  <img src="/medicons/pill-nobg.svg" alt="pill" class="w-[16px] absolute block top-[30%] right-[25%] animate-bob-sway-fast"/>
+  <div class="w-full relative overflow-x-hidden flex justify-center sea-footer-graphics">
+    <img src="/medicons/heart-nobg.svg" alt="heart" class="w-[120px] block sea-med-img"/>
+    <img src="/medicons/pill-nobg.svg" alt="pill" class="w-[44px] absolute block top-[20%] left-[25%] animate-bob-sway-med sea-med-img"/>
+    <img src="/medicons/pill-nobg.svg" alt="pill" class="w-[16px] absolute block top-[30%] right-[25%] animate-bob-sway-fast sea-med-img"/>
   </div>
   <div class="grid p-10 grid-flow-row grid-rows-3 tablet:grid-flow-col tablet:grid-cols-3 tablet:grid-rows-1 place-content-center items-center text-center text-white bg-[#0c0c0c] -mt-5">
     <div class="flex items-center justify-center">
@@ -45,3 +45,10 @@
     </div>
   </div>
 </footer>
+
+<style>
+  .sea-footer-graphics .sea-med-img{
+    filter: hue-rotate(170deg) saturate(1.05) drop-shadow(0 14px 30px rgba(0,20,40,0.6));
+    opacity: 0.95;
+  }
+</style>

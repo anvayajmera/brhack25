@@ -1,10 +1,6 @@
 ---
-import stethoscope from '../../public/medicons/stethoscope-nobg.svg'
-import heart from '../../public/medicons/heart-nobg.svg'
-import pill from '../../public/medicons/pill-nobg.svg'
-import medkit from '../../public/medicons/medkit.svg'
-import syringe from '../../public/medicons/syringe.svg'
-import bandage from '../../public/medicons/bandage.svg'
+// Use public/ assets via absolute paths so Vercel and Astro serve them reliably
+// ...existing code...
 import Counter from '../components/Countdown'
 import { motion } from "framer-motion";
 ---
@@ -60,4 +56,16 @@ import { motion } from "framer-motion";
     width: 25%;
     right: 5%;
   }
+
+.info-med-icons {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  justify-content: center;
+}
+
+.info-med-icons img {
+  width: 64px;
+  filter: drop-shadow(0 8px 18px rgba(1,25,40,0.6));
+}
 </style>
