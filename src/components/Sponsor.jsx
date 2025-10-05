@@ -3,24 +3,24 @@ import './SponStyle.css';
 
 const sponsors = [
   {
-    name: "CME Group",
-    image: "../sponsors/cme-logo.png",
+    name: "BRHS",
+    image: "../sponsors/BRHS.png",
   },
   {
-    name: "UIC CS Department",
-    image: "../sponsors/uicengineering.svg",
+    name: "Wegmans",
+    image: "../sponsors/Wegmans.png",
   },
   {
-    name: "John Deere",
-    image: "../sponsors/johndeere.svg",
+    name: "YRI",
+    image: "../sponsors/YRI.png",
   },
   {
-    name: "Grainger",
-    image: "../sponsors/grainger.svg",
+    name: "Bridgewater Acura",
+    image: "../sponsors/BAcura.png",
   },
   {
-    name: "Fulcrum",
-    image: "../sponsors/fulcrum.svg",
+    name: "Invonto",
+    image: "../sponsors/Invonto.png",
   },
 ]
 
@@ -54,7 +54,7 @@ export default function Sponsor(){
         {expandedSponsors.map((sponsor, i) => 
           <div key={sponsor.name + i}  className=' group relative flex justify-center items-center min-h-[160px]'>
             <span className=' shadow-[0px_0px_4px_0px_#FFDAB9] rounded-[26.812px] border-4 border-solid border-[#CDA5C7] backdrop-blur-[19.5px]  absolute opacity-0 scale-0 transition-all group-hover:opacity-100 group-hover:scale-100  w-[70%] text-center text-[white] font-poppin '>{sponsor.name}</span>
-            <img src={sponsor.image} width="250" height="250" className="object-contain min-w-[250px]"/>    
+            <img src={sponsor.image} width="125" height="125" className="object-contain min-w-[125px]"/>    
           </div>
         )}
       </motion.div>

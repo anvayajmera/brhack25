@@ -20,7 +20,7 @@ export default function Header() {
   };
 
   const handleApply = () =>
-    window.open("https://dashboard.brhacks.org", "_blank");
+    window.open("https://docs.google.com/forms/d/e/1FAIpQLScOgKXIo6Fu0Pvj4Bt3xwkHVC9ibr-KCclyDoVbFVC_SNY8_Q/viewform", "_blank");
 
   useEffect(() => {
     const html = document.querySelector("html");

@@ -1,19 +1,37 @@
----
-// Single-day workshops schedule (2nd Sunday of October 2025 -> Oct 12, 2025)
-const schedulingData = [
+            ---
+            // Single-day workshops schedule (2nd Sunday of October 2025 -> Oct 12, 2025)
+            const schedulingData = [
   {
     date: "Sunday, October 12, 2025",
     day: "Sunday",
-    // condensed event list to keep the visual section short
+    // condensed event list to match the table data
     events: [
-      { time: "8:00 - 9:45", title: "Registration / Team creation", location: "Main Lobby" },
-      { time: "9:45 - 10:00", title: "Opening Remarks", location: "Auditorium" },
-      { time: "10:00 - 11:45", title: "Workshop Blocks (see room listings)", location: "Multiple Rooms" },
-      { time: "12:00 - 12:45", title: "Lunch", location: "Cafeteria" },
-      { time: "1:00 - 2:30", title: "Speaker Sessions / Mentorship", location: "Auditorium / Cafeteria" },
-      { time: "2:30 - 5:30", title: "Hack / Build Time", location: "Classrooms & Labs" },
-      { time: "5:30 - 6:00", title: "Project Demos & Judging", location: "Auditorium" },
-      { time: "6:00 - 7:00", title: "Closing Ceremonies", location: "Auditorium" },
+      { time: "8:00-8:45", title: "Judge/Staff Lounge", location: "Digital Media" },
+      { time: "8:00-8:45", title: "Networking/Team Selection", location: "Cafeteria" },
+      { time: "8:00-8:45", title: "Lounge", location: "104" },
+      { time: "8:00-8:45", title: "Registration/Opening Ceremony (9:15-9:30ish)*", location: "Large Cafe" },
+      { time: "9:00-9:45", title: "Python", location: "173" },
+      { time: "9:00-9:45", title: "CS Careers", location: "118" },
+      { time: "10:00-10:45", title: "Data Visualizations", location: "171" },
+      { time: "10:00-10:45", title: "Club Workshop", location: "172" },
+      { time: "10:00-10:45", title: "CAD Design", location: "118" },
+      { time: "11:00-11:45", title: "Club Workshop", location: "171" },
+      { time: "11:00-11:45", title: "WiSTEM Club", location: "173" },
+      { time: "11:00-11:45", title: "Dr. Andrzej Torbus and Dr. Kelvin Kwong", location: "Cafeteria" },
+      { time: "11:50-12:30", title: "Club Workshop", location: "139" },
+      { time: "12:00-12:45", title: "Club Workshop", location: "171" },
+      { time: "12:00-12:45", title: "Java Fundamentals", location: "173" },
+      { time: "12:00-12:45", title: "Lunch (12:45-1:45)", location: "Cafeteria" },
+      { time: "1:00-1:45", title: "MuAlpha Theta Club", location: "171" },
+      { time: "1:00-1:45", title: "BRHS Engineering!!!!!", location: "172" },
+      { time: "1:00-1:45", title: "Web Development", location: "173" },
+      { time: "1:00-1:45", title: "Club Workshop", location: "118" },
+      { time: "2:00-2:45", title: "Game Development", location: "173" },
+      { time: "2:00-2:45", title: "CS Comps", location: "118" },
+      { time: "3:00-4:00", title: "Kathleen McEnnis - Speaker Event", location: "Large Cafe" },
+      { time: "5:00-6:00", title: "Kahoot", location: "Cafeteria" },
+      { time: "6:00-7:00", title: "Dinner", location: "Cafeteria" },
+      { time: "7:00-8:00", title: "Closing Ceremonies", location: "Cafeteria" },
     ],
   },
 ];
@@ -23,6 +41,7 @@ const schedulingData = [
   class="flex flex-col items-center w-full bg-gradient-to-b from-[#052947] to-[#091f3d] text-white pt-16 "
   id="schedule"
 >
+  <!-- Full Schedule heading moved below -->
   <!-- background decorations (medical-theme) -->
   <div class="background-decorations" aria-hidden="true">
     <!-- Each SVG uses currentColor so CSS controls opacity/color -->
@@ -56,18 +75,24 @@ const schedulingData = [
   <div class="flex place-content-center items-center px-4 tablet:px-[10%]">
     <h1 class="text-4xl font-bold text-center">📅 Schedule</h1>
   </div>
+  <!-- Color Key -->
+  <div class="flex flex-wrap justify-center gap-4 my-4">
+  <span class="px-3 py-1 rounded font-semibold bg-[#fbbf24] bg-opacity-60 text-black">Specialized</span>
+  <span class="px-3 py-1 rounded font-semibold bg-[#38bdf8] bg-opacity-60 text-black">Club Workshop</span>
+  <span class="px-3 py-1 rounded font-semibold bg-[#a3e635] bg-opacity-60 text-black">Admin</span>
+  <span class="px-3 py-1 rounded font-semibold bg-[#f472b6] bg-opacity-60 text-black">Speaker Events</span>
+  <span class="px-3 py-1 rounded font-semibold bg-[#f87171] bg-opacity-60 text-black">Food</span>
+  </div>
+  </div>
 
   <div
     class="flex flex-col desktop:flex-row justify-center my-6 gap-12 px-4 tablet:px-[15%] desktop:px-[2%]"
   >
     {
       schedulingData.map((day) => (
-        <div class= "max-w-full flex flex-1 py-6 px-6 tablet:px-12 pb-8 bg-cover bg-[url('../schedback.svg')]">
+  <div class= "max-w-full flex flex-1 py-6 px-6 tablet:px-12 pb-16 min-h-[950px] bg-cover bg-[url('../schedback.svg')]">
           <div class=" font-poppin flex-col flex text-white border-none ">
-            <h1 class="text-2xl font-[700] pt-6 text-center">{day.date}</h1>
-            <h1 class="font-poppin mb-3 text-xl font-[500] text-center">
-              {day.day}
-            </h1>
+            {/* Removed 'Full Schedule' heading as requested */}
 
             {/* Placeholder */}
             {/* <div class="flex flex-col justify-center h-[100%]">
@@ -75,14 +100,30 @@ const schedulingData = [
               <h1 class="text-5xl text-center pt-5">TBD</h1>
             </div> */}
             <div class="flex flex-col gap-3">
-              {day.events.map((event) => (
-                <p class="text-base">
-                  <span class="font-extrabold text-lg">{event.title}</span>
-                  <br>
-                  <span class="text-sm">{event.time}</span> - <span class="text-[#53B8F4]">{event.location}</span>
-
-                </p>
-              ))}
+              <h1 class="font-poppin mb-3 text-xl font-[500] text-center" style="opacity:0;">Full Schedule</h1>
+              <h1 class="font-poppin mb-3 text-xl font-[500] text-center" style="opacity:0;">Full Schedule</h1>
+              {day.events.map((event) => {
+                // Color coding logic
+                let colorClass = "";
+                if (["Python","CS Careers","Data Visualizations","WiSTEM Club","CAD Design","Java Fundamentals","MuAlpha Theta Club","BRHS Engineering!!!!!","Web Development","Game Development","CS Comps"].includes(event.title)) {
+                  colorClass = "bg-[#fbbf24] bg-opacity-60 text-black"; // Specialized
+                } else if (event.title.includes("Club Workshop")) {
+                  colorClass = "bg-[#38bdf8] bg-opacity-60 text-black"; // Club Workshop
+                } else if (["Judge/Staff Lounge","Networking/Team Selection","Lounge","Registration/Opening Ceremony (9:15-9:30ish)*"].includes(event.title)) {
+                  colorClass = "bg-[#a3e635] bg-opacity-60 text-black"; // Admin
+                } else if (event.title.includes("Speaker Event") || event.title.includes("Kathleen McEnnis") || event.title.includes("Dr. Andrzej Torbus") || event.title.includes("Closing Ceremonies") || event.title.includes("Kahoot")) {
+                  colorClass = "bg-[#f472b6] bg-opacity-60 text-black"; // Speaker Events
+                } else if (event.title.includes("Lunch") || event.title.includes("Dinner")) {
+                  colorClass = "bg-[#f87171] bg-opacity-60 text-black"; // Food
+                }
+                return (
+                  <p class={`text-base`}>
+                    <span class={`font-extrabold text-lg px-2 py-1 rounded ${colorClass}`}>{event.title}</span>
+                    <br />
+                    <span class="text-sm">{event.time}</span> - <span class="text-[#53B8F4]">{event.location}</span>
+                  </p>
+                );
+              })}
             </div>
           </div>
           {/* <div class= "flex" id="mini-jelly"></div> */}
