@@ -1,0 +1,57 @@
+name: Build and deploy Astro to GitHub Pages
+
+on:
+  push:
+    branches: [ main ]
+  workflow_dispatch:
+
+jobs:
+  build-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 18
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build
+        run: npm run build
+
+      - name: Prepare Pages artifact
+        run: |
+          # Astro's build output goes to 'dist' by default. If your project
+          # outputs to 'public' or another folder, adjust this path.
+          BUILD_DIR=dist
+          if [ ! -d "$BUILD_DIR" ]; then
+            # Some Astro setups use 'public' as publish dir
+            BUILD_DIR=public
+          fi
+          echo "Publishing directory: $BUILD_DIR"
+          # Ensure .nojekyll to disable GitHub Pages Jekyll processing
+          touch "$BUILD_DIR/.nojekyll"
+          ls -la "$BUILD_DIR" | sed -n '1,200p'
+
+      - name: Upload artifact for GitHub Pages
+        uses: actions/upload-pages-artifact@v1
+        with:
+          path: |
+            dist
+            public
+
+  deploy:
+    needs: build-deploy
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: https://$GITHUB_REPOSITORY.github.io
+
+    steps:
+      - name: Deploy to GitHub Pages
+        uses: actions/deploy-pages@v1
