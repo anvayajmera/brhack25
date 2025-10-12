@@ -12,5 +12,5 @@ export const teamMembers = [
 
   { name: "Dimah Alhamami", title: "Outreach", image: "/team/default.png" },
 
-  { name: "Anushka Chaudhary", title: "Social Media", image: "/team/julia.png" },
+  { name: "Anushka Biswal", title: "Social Media", image: "/team/julia.png" },
 ]
