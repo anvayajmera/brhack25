@@ -20,7 +20,7 @@ export default function Header() {
   };
 
   const handleApply = () =>
-    window.open("https://docs.google.com/forms/d/e/1FAIpQLScOgKXIo6Fu0Pvj4Bt3xwkHVC9ibr-KCclyDoVbFVC_SNY8_Q/viewform", "_blank");
+    window.open("https://brhs-2025-hackathon.devpost.com/", "_blank");
 
   useEffect(() => {
     const html = document.querySelector("html");
@@ -39,7 +39,7 @@ export default function Header() {
         ))}
         <li className={styles.apply}>
           <a onClick={handleApply} className="cursor-pointer">
-            Apply
+            Submit
           </a>
         </li>
       </ul>
@@ -94,7 +94,7 @@ export default function Header() {
             transition={{ duration: 0.3 }}
             whileHover={{ scale: 1.2 }}
           >
-            <h1>Apply</h1>
+            <h1>Submit</h1>
           </motion.button>
           <motion.button
             onClick={toggleMenu}
